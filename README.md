@@ -43,6 +43,5 @@
 - hitCard (추가 카드 뽑기)
 - checkNowCardSum
 ### 덱
-- randomPick
-  - 문양 random, 그 해당 문양에 대한 random
-- consumePick (뽑힌 카드는 remove 해야 함)
+- shuffle (카드 섞기) [ O ]
+- consumeCard (카드 소모) [ O ]

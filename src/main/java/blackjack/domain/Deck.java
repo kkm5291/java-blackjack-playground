@@ -4,7 +4,6 @@ import blackjack.domain.card.Card;
 import blackjack.domain.card.CardValue;
 import blackjack.domain.card.Shape;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -16,6 +15,11 @@ public class Deck {
 
     public Deck() {
         cards = createDeck();
+        shuffleCards();
+    }
+
+    public List<Card> getCards() {
+        return cards;
     }
 
     private List<Card> createDeck() {
@@ -25,7 +29,11 @@ public class Deck {
                 ).collect(Collectors.toList());
     }
 
-    private void shuffleCards() {
+    public void shuffleCards() {
         Collections.shuffle(cards);
+    }
+
+    public Card consumeCard() {
+        return cards.remove(0);
     }
 }
