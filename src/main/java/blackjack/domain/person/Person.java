@@ -10,7 +10,4 @@ public abstract class Person {
     private final List<Card> hand = new ArrayList<>();
     private int bet;
 
-//    public int calculateHand() {
-//
-//    }
 }
