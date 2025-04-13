@@ -10,10 +10,6 @@ public abstract class Cards {
         this.cards = new ArrayList<>(cards);
     }
 
-    public boolean contains(Card card) {
-        return cards.contains(card);
-    }
-
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;

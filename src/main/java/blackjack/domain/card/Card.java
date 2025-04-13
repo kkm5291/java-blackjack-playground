@@ -4,12 +4,20 @@ import java.util.Objects;
 
 public class Card {
 
-    private Shape shape;
-    private CardValue cardValue;
+    private final Shape shape;
+    private final CardValue cardValue;
 
     public Card(Shape shape, CardValue cardValue) {
         this.shape = shape;
         this.cardValue = cardValue;
+    }
+
+    public Shape getShape() {
+        return shape;
+    }
+
+    public CardValue getCardValue() {
+        return cardValue;
     }
 
     @Override
