@@ -16,7 +16,29 @@ public class Hand extends Cards {
     }
 
     public int calculateHand() {
-        return cards.stream()
-                .reduce(0, (a, b) -> a + b.getCardValue().getValues()[0], Integer::sum);
+        //todo stream 으로 변환시켜야 함.
+        int sum = 0;
+
+        for (Card card : cards) {
+            sum += card.getCardValue().getValues()[0];
+        }
+
+        int aceCount = countAce();
+        if (aceCount > 0) {
+
+            while (aceCount > 0) {
+                if (sum + 10 <= 21) {
+                    sum += 10;
+                }
+                aceCount--;
+            }
+        }
+        return sum;
+    }
+
+    public int countAce() {
+        return (int) cards.stream()
+                .filter(card -> card.getCardValue() == CardValue.ACE)
+                .count();
     }
 }

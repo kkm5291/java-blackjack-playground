@@ -29,7 +29,15 @@ class HandTest {
     void calculateHandWithAce() {
         hand.addCard(new Card(Shape.HEART, CardValue.ACE));
         hand.addCard(new Card(Shape.HEART, CardValue.SIX));
-        assertThat(hand.calculateHand()).isEqualTo(16);
+        assertThat(hand.calculateHand()).isEqualTo(17);
+
+        hand.addCard(new Card(Shape.HEART, CardValue.FIVE));
+        assertThat(hand.calculateHand()).isEqualTo(12);
     }
 
+    @Test
+    void countAce() {
+        hand.addCard(new Card(Shape.HEART, CardValue.ACE));
+        assertThat(hand.countAce()).isEqualTo(1);
+    }
 }
