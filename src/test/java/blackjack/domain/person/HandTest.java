@@ -25,4 +25,11 @@ class HandTest {
         assertThat(hand.calculateHand()).isEqualTo(10);
     }
 
+    @Test
+    void calculateHandWithAce() {
+        hand.addCard(new Card(Shape.HEART, CardValue.ACE));
+        hand.addCard(new Card(Shape.HEART, CardValue.SIX));
+        assertThat(hand.calculateHand()).isEqualTo(16);
+    }
+
 }
