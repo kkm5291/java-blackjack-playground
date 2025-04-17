@@ -1,27 +1,27 @@
 package blackjack.domain.card;
 
 public enum CardValue {
-    ACE(new int[]{1, 11}),
-    TWO(new int[]{2}),
-    THREE(new int[]{3}),
-    FOUR(new int[]{4}),
-    FIVE(new int[]{5}),
-    SIX(new int[]{6}),
-    SEVEN(new int[]{7}),
-    EIGHT(new int[]{8}),
-    NINE(new int[]{9}),
-    TEN(new int[]{10}),
-    JACK(new int[]{10}),
-    QUEEN(new int[]{10}),
-    KING(new int[]{10});
+    ACE(1),
+    TWO(2),
+    THREE(3),
+    FOUR(4),
+    FIVE(5),
+    SIX(6),
+    SEVEN(7),
+    EIGHT(8),
+    NINE(9),
+    TEN(10),
+    JACK(10),
+    QUEEN(10),
+    KING(10);
 
-    private final int[] values;
+    private final int value;
 
-    CardValue(int[] values) {
-        this.values = values;
+    CardValue(int value) {
+        this.value = value;
     }
 
-    public int[] getValues() {
-        return values;
+    public int getValue() {
+        return value;
     }
 }

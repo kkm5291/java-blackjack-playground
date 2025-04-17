@@ -4,6 +4,7 @@ import blackjack.domain.card.Card;
 import blackjack.domain.card.CardValue;
 import blackjack.domain.card.Cards;
 import java.util.ArrayList;
+import java.util.stream.IntStream;
 
 public class Hand extends Cards {
 
@@ -17,22 +18,17 @@ public class Hand extends Cards {
 
     public int calculateHand() {
         //todo stream 으로 변환시켜야 함.
-        int sum = 0;
-
-        for (Card card : cards) {
-            sum += card.getCardValue().getValues()[0];
-        }
+        int sum = cards.stream()
+                .mapToInt(card -> card.getCardValue().getValue())
+                .sum();
 
         int aceCount = countAce();
-        if (aceCount > 0) {
 
-            while (aceCount > 0) {
-                if (sum + 10 <= 21) {
-                    sum += 10;
-                }
-                aceCount--;
-            }
-        }
+        int tempSum = sum;
+        sum += IntStream.range(0, aceCount)
+                .filter(count -> tempSum + 10 <= 21)
+                .map(count -> 10)
+                .sum();
         return sum;
     }
 
