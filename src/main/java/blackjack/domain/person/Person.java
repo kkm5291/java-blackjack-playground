@@ -8,9 +8,10 @@ public abstract class Person {
     private Hand hand;
     private int bet;
 
-    public Person(String name) {
+    protected Person(String name) {
         this.name = name;
         this.hand = new Hand();
+        this.bet = 0;
     }
 
     public int checkHand() {

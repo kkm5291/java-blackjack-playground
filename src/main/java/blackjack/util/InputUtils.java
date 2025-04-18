@@ -13,8 +13,12 @@ public class InputUtils {
         return scanner.nextLine();
     }
 
-    public static String inputPlayerName() {
+    public static String[] splitInput(String input) {
+        return input.split(",");
+    }
+
+    public static String[] inputPlayerName() {
         System.out.println(START_GAME_MESSAGE);
-        return input();
+        return splitInput(input());
     }
 }
