@@ -17,7 +17,6 @@ public class Hand extends Cards {
     }
 
     public int calculateHand() {
-        //todo stream 으로 변환시켜야 함.
         int sum = cards.stream()
                 .mapToInt(card -> card.getCardValue().getValue())
                 .sum();
