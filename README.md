@@ -35,12 +35,13 @@
 
 ## 필요 기능 (현재 플레이어, 딜러 추가 중)
 ### 플레이어
-- drawCard (추가 카드 요구)
-- checkNowCardSum
+- drawCard (추가 카드 요구) [ O ]
+- checkNowCardSum [ O ]
+- printNowCard
 ### 딜러
-- drawCard (카드 뽑기)
-- checkNowCardSum
-- 
+- drawCard (카드 뽑기) [ O ]
+- checkNowCardSum [ O ]
+- printNowCard (딜러는 한 장만 오픈하게 될 것)
 ### 덱
 - shuffle (카드 섞기) [ O ]
 - consumeCard (카드 소모) [ O ]

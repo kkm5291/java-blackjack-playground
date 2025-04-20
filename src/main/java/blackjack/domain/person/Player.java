@@ -6,4 +6,8 @@ public class Player extends Person {
         super(name);
     }
 
+    @Override
+    public void openCardFromHand() {
+
+    }
 }
